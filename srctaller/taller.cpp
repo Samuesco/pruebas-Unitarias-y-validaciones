@@ -22,7 +22,7 @@ void taller::sumaryagregar(int num1, int num2) {
     val1 = existelemento(num1);
     val2 = existelemento(num2);
     if(val1 < 0 || val1 > 1 || val2 < 0 || val2 > 1){
-        throw range_error("Valor validaciones invalidas");
+        throw invalid_argument("Valor validaciones invalidas");
     }
     else if(val1 == 1 && val2 == 1){
         res = num1+num2;
@@ -33,7 +33,7 @@ void taller::sumaryagregar(int num1, int num2) {
 void taller::eliminarElementovector(int numeroB){
     int ban = 0, i = 0;
     while(ban == 0 && i < this->vectornum.size()){
-        if(i > vectornum.size() || i < vectornum.size() ){
+        if( i < 0 || i > vectornum.size() ){
             throw range_error("Acceder al indice del vector");
         }
         else {
